@@ -1,0 +1,27 @@
+    <!-- start comic -->
+		<{if $comic != "mopvddag" && $comic != "9to5" && $comic != "user"}>
+			<img src="<{$url_to_image}>" alt="Comic">
+			<br><small>.:© <{$copyear}> <a href="<{$url_to_archive}>" target="_blank"><{$copywho}></a>:.</small>
+		<{else}>
+			<{if $comic == "mopvddag"}>
+				<b>Titel:&nbsp;</b> <{$titel_mop_vd_dag}> <br>
+				<b>Mop:</b><br>
+				<textarea name="textfield" cols="45" rows="7">
+<{$text_mop_vd_dag}>
+				</textarea>
+				<br><small>.:© <{$copyear}> <a href="<{$url_to_archive}>" target="_blank"><{$copywho}></a>:.</small>
+			<{/if}>
+			<{if $comic == "9to5"}>
+				<{if $theday != "0"}>
+					<img src="<{$url_to_image}>" alt="Comic">
+					<br><small>.:© <{$copyear}> <a href="<{$url_to_archive}>" target="_blank"><{$copywho}></a>:.</small>
+				<{else}>
+					<big><{$lang_co_nb}><big>
+				<{/if}>
+			<{/if}>
+			<{if $comic == "user"}>
+				<{include file="db:comics_owncomic.html"}>
+				<br><small>.:© <{$copyear}> <{$susercop}>:.</small>
+			<{/if}>
+		<{/if}>    
+    <!-- end comic -->
